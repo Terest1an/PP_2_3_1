@@ -10,6 +10,8 @@ public interface UserDao {
    User getUser(int id);
    void update(User user);
    void removeUserById(int id);
+   void createUser(String name, String surname, int age);
+   public void createUserTable();
 
 
 }
