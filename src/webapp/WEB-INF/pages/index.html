@@ -3,13 +3,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <title>Marvel Heroes</title>
 </head>
 <body>
-<div>
-    <th:block th:each="msg : ${messages}">
-        <h1 th:text="${msg}"></h1>
-    </th:block>
+<br>
+<h1>List of Marvel Heroes</h1>
+<div th:each="user : ${users}">
+    <a th:href="@{/users/{id}(id=${user.getId()})}"
+       th:text="${user.getName() + ',  ' + user.getSurName() + ',  ' + user.getAge() + ' YO.'}"></a>
 </div>
+
+
+<p>
+    <a href="/users/new">Create new Person</a>
+<!--<form th:action="@{/people/new}" method="get">-->
+<!--    <button type="submit">Create new Person</button>-->
+<!--</form>-->
+</p>
 </body>
 </html>
