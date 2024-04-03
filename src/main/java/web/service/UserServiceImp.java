@@ -44,15 +44,7 @@ public class UserServiceImp implements UserService {
         userDao.removeUserById(id);
     }
 
-    @Transactional
-    @Override
-    public void createUser(String name, String surname, int age) {
-        userDao.createUser(name, surname, age);
 
-    }
 
-    public void createUserTable() {
-        userDao.createUserTable();
-    }
 
 }

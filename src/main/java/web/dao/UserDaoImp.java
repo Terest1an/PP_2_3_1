@@ -25,16 +25,6 @@ public class UserDaoImp implements UserDao {
         entityManager.persist(user);
     }
 
-    @Override
-    @Transactional
-    public void createUser(String name, String surname, int age) {
-        User user = new User();
-        user.setName(name);
-        user.setSurName(surname);
-        user.setAge(age);
-        entityManager.persist(user);
-    }
-
 
     @Override
     public List<User> getUsers() {
@@ -56,13 +46,7 @@ public class UserDaoImp implements UserDao {
     public void removeUserById(int id) {
         entityManager.remove(entityManager.find(User.class, id));
     }
-    @Override
-    public void createUserTable() {
-        String sql = "CREATE TABLE IF NOT EXISTS users ("
-                + "id INT PRIMARY KEY AUTO_INCREMENT,"
-                + "name VARCHAR(45), surname VARCHAR(45), age int";
-        entityManager.createNativeQuery(sql).executeUpdate();
-    }
+
 
 
 }

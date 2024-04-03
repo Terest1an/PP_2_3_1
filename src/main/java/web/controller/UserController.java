@@ -26,6 +26,11 @@ public class UserController {
         model.addAttribute("users", userService.getUsers());
         return "index";
     }
+//    @GetMapping(value="/newShema")
+//    public String newTableWithFewUsers() {
+//        userService.createUserTable();
+//        return "index";
+//    }
 
     @GetMapping(value = "/new")
     public String newUser(@ModelAttribute("user") User user) {
