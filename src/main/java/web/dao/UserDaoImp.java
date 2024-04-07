@@ -12,15 +12,17 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 import java.util.List;
 
-@Component
+
 @Repository
+/*если кратко, то аннотация repository является частным случаем component,
+ поэтому не нужно использовать их вместе. Repository используется для классов ДАО
+ */
 public class UserDaoImp implements UserDao {
 
     @PersistenceContext
     private EntityManager entityManager;
 
     @Override
-    @Transactional
     public void add(User user) {
         entityManager.persist(user);
     }
